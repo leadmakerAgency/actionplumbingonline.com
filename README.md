@@ -1,7 +1,7 @@
 # Action Plumbing Heating & HVAC — Website
 
 Static marketing site for **Action Plumbing Heating & HVAC**, Lehigh Valley, PA.  
-Built with [Jekyll](https://jekyllrb.com/) and hosted on **GitHub Pages**.
+Built with [Jekyll](https://jekyllrb.com/) and deployed on **Vercel**.
 
 ---
 
@@ -20,7 +20,7 @@ Built with [Jekyll](https://jekyllrb.com/) and hosted on **GitHub Pages**.
 10. [Images](#images)
 11. [Writing Blog Posts](#writing-blog-posts)
 12. [Adding New Service Pages](#adding-new-service-pages)
-13. [Deployment (GitHub Pages)](#deployment-github-pages)
+13. [Deployment (Vercel)](#deployment-vercel)
 14. [SEO & Meta Tags](#seo--meta-tags)
 
 ---
@@ -29,8 +29,8 @@ Built with [Jekyll](https://jekyllrb.com/) and hosted on **GitHub Pages**.
 
 | Layer | Tool |
 |---|---|
-| Static site generator | Jekyll (via `github-pages` gem) |
-| Hosting | GitHub Pages |
+| Static site generator | Jekyll |
+| Hosting | Vercel |
 | Styling | Plain CSS (custom properties, no framework) |
 | JavaScript | Vanilla JS (no build step) |
 | Templating | Liquid |
@@ -61,7 +61,7 @@ bundle install
 bundle exec jekyll serve --livereload
 ```
 
-The site will be available at `http://localhost:4000/Action-Plumbing/`.
+The site will be available at `http://localhost:4000/`.
 
 > **Windows note:** If you hit `wdm` gem errors, run `bundle add wdm` or add `gem "wdm", ">= 0.1.0"` to the Gemfile and re-run `bundle install`.
 
@@ -330,7 +330,7 @@ All images live in `images/` and should be in **WebP format** for performance.
 | `truck-hero.webp` | Service truck / hero image |
 | `logo.webp` | Company logo |
 
-Always reference images via `relative_url` so they work on both `localhost` and GitHub Pages:
+Always reference images via `relative_url` so they work on both `localhost` and Vercel:
 
 ```liquid
 src="{{ '/images/your-image.webp' | relative_url }}"
@@ -418,13 +418,19 @@ description: "..."
 
 ---
 
-## Deployment (GitHub Pages)
+## Deployment (Vercel)
 
-The site deploys automatically on every push to the `main` branch via GitHub Pages.
+The site deploys automatically on every push to the connected Git branch via Vercel.
 
-**Live URL:** `https://actionplumbingonline.com`
+**Production URL:** `https://actionplumbingonline.com` (configure in Vercel → Settings → Domains)
 
-Deployment is zero-config — GitHub Pages detects the `Gemfile` and builds the site with Jekyll automatically. The `exclude:` list in `_config.yml` prevents dev files from being included in the build output.
+Build settings are defined in `vercel.json`:
+
+- Install: `bundle install`
+- Build: `bundle exec jekyll build --trace`
+- Output: `_site`
+
+Connect the GitHub repo in the Vercel dashboard, or deploy with the Vercel CLI.
 
 > **`_site/` is gitignored.** Never commit build output.
 

@@ -1,15 +1,16 @@
 <header class="site-header">
   <div class="container">
     <nav class="nav">
-      <a href="{{ site.data.site.main_site }}" class="logo">
+      <a href="{{ '/' | relative_url }}" class="logo">
         <img src="{{ '/images/action-logo.png' | relative_url }}" alt="Action Plumbing" class="logo-img">
       </a>
       <ul class="nav-links" id="nav-links">
-        <li><a href="{{ site.data.site.main_site }}">Home</a></li>
-        <li><a href="{{ site.data.site.main_site }}/plumbing-and-water">Plumbing</a></li>
-        <li><a href="{{ site.data.site.main_site }}/heating-and-air">Heating &amp; Air</a></li>
-        <li><a href="{{ site.data.site.main_site }}/sewer-and-drain-cleaning">Drain &amp; Sewer</a></li>
+        <li><a href="{{ '/' | relative_url }}">Home</a></li>
+        <li><a href="{{ '/plumbing-and-water/' | relative_url }}">Plumbing</a></li>
+        <li><a href="{{ '/heating-and-air/' | relative_url }}">Heating &amp; Air</a></li>
+        <li><a href="{{ '/sewer-and-drain-cleaning/' | relative_url }}">Drain &amp; Sewer</a></li>
         <li><a href="{{ '/blog/' | relative_url }}" {% if page.url contains 'blog' %}class="active"{% endif %}>Blog</a></li>
+        <li><a href="{{ '/contact/' | relative_url }}" {% if page.url contains 'contact' %}class="active"{% endif %}>Contact</a></li>
       </ul>
       <a href="{{ site.data.site.phone_link }}" class="btn btn-primary nav-cta">{{ site.data.site.phone_formatted }}</a>
       <button class="hamburger" id="hamburger" aria-label="Open menu">
@@ -18,11 +19,12 @@
     </nav>
   </div>
   <nav class="mobile-menu" id="mobile-menu">
-    <a href="{{ site.data.site.main_site }}">Home</a>
-    <a href="{{ site.data.site.main_site }}/plumbing-and-water">Plumbing</a>
-    <a href="{{ site.data.site.main_site }}/heating-and-air">Heating &amp; Air</a>
-    <a href="{{ site.data.site.main_site }}/sewer-and-drain-cleaning">Drain &amp; Sewer</a>
+    <a href="{{ '/' | relative_url }}">Home</a>
+    <a href="{{ '/plumbing-and-water/' | relative_url }}">Plumbing</a>
+    <a href="{{ '/heating-and-air/' | relative_url }}">Heating &amp; Air</a>
+    <a href="{{ '/sewer-and-drain-cleaning/' | relative_url }}">Drain &amp; Sewer</a>
     <a href="{{ '/blog/' | relative_url }}">Blog</a>
+    <a href="{{ '/contact/' | relative_url }}">Contact</a>
     <a href="{{ site.data.site.phone_link }}" style="color:var(--clr-accent);margin-top:.5rem;">&#128222; {{ site.data.site.phone_formatted }}</a>
   </nav>
 </header>

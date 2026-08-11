@@ -1,0 +1,14 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "installCommand": "bundle install",
+  "buildCommand": "bundle exec jekyll build --trace",
+  "outputDirectory": "_site",
+  "cleanUrls": true,
+  "trailingSlash": true,
+  "build": {
+    "env": {
+      "JEKYLL_ENV": "production"
+    }
+  }
+}

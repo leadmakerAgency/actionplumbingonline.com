@@ -13,7 +13,7 @@ layout: default
   "publisher": {
     "@type": "Organization",
     "name": {{ site.data.site.company_name | jsonify }},
-    "logo": { "@type": "ImageObject", "url": "{{ site.url }}{{ site.baseurl }}/assets/images/favicon.jpg" }
+    "logo": { "@type": "ImageObject", "url": "{{ site.url }}{{ site.baseurl }}/images/action-logo.png" }
   }{% if page.image %},
   "image": "{{ site.url }}{{ site.baseurl }}{{ page.image }}"{% endif %},
   "mainEntityOfPage": { "@type": "WebPage", "@id": "{{ site.url }}{{ site.baseurl }}{{ page.url }}" }
@@ -54,7 +54,7 @@ layout: default
       {% else %}<span class="article-nav-link article-nav-placeholder"></span>{% endif %}
     </nav>
     <div class="article-back">
-      <a href="{{ '/blog.html' | relative_url }}" class="btn btn-outline">&larr; Back to Blog</a>
+      <a href="{{ '/blog/' | relative_url }}" class="btn btn-outline">&larr; Back to Blog</a>
     </div>
   </div>
 </article>
@@ -64,7 +64,7 @@ layout: default
     <h2>Need Plumbing or <span>HVAC Help?</span></h2>
     <p>24/7 emergency service &mdash; same-day appointments available. 30-day labor warranty.</p>
     <div class="cta-actions">
-      <a href="{{ site.data.site.main_site }}/contact" class="btn btn-primary">Request Service</a>
+      <a href="{{ '/contact/' | relative_url }}" class="btn btn-primary">Request Service</a>
       <a href="{{ site.data.site.phone_link }}" class="btn btn-outline">{{ site.data.site.phone_formatted }}</a>
     </div>
   </div>
